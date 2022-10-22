@@ -72,6 +72,7 @@ paths:
         '500':
           description: Database error when writing data
 
+components:
   securitySchemes:
     bearerAuth:
       type: http
