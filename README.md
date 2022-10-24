@@ -207,3 +207,16 @@ Install the User Storage SPI "vvapi-user-provider" in Keycloak. This will make a
 
 ### API environment
 The new client now needs to be added to the .env file for the API in the same way as for the CRM API.
+
+The corresponding section of the .env file could look like this:
+
+```json
+  "bbutler-api-client": {
+    "realm_public_key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3FUbxQuqe2H/xqImEg1MLnuMUxrtPe1bwObQZjBbiMEm+nES18AlMSiYFKAS+DOzpQ23CVgRYlgvOLE2Q/zOe99hYj038PytHtXgutzBKoIcqVe+OQ4Pnx8RqfDideKrv1EItow7y4gc40QnrAa+1P1esaeOCJ6MrxTJs08lH1wxVnaQE5uapE5MN6yoY2pY3oAh/M2a/Bn94xLqswvqO+bvhBOogu6by5jvnORgDDsTI0HBE0W8USPz0k0E+CuzKNT05JtSxS5c537mSDiDCGgmQpRshotbHWoOkr7h12V54nMnUz0+gGpVmJzj8Pig92lacpnIZGCEU3Wnw03yCQIDAQAB",
+    "load_user_from_database": false,
+    "user_provider_credential": "service-account-bbutler-api-client",
+    "token_principal_attribute": "preferred_username",
+    "append_decoded_token": false,
+    "allowed_resources": "bbutler-api-client"
+  }
+```
