@@ -1,28 +1,3 @@
-openapi: 3.0.0
-servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://vcloud.dev.comciencia.cl/bb/
-
-info:
-  description: |
-    ## Info ##
-    API that connects Buchhaltungsbutler with S-Verein.
-    Make sure to always view the model and not just the examples, because the models contain a lot of important descriptions for
-    the fields that are otherwise not visible in Swagger.
-    
-    See the GIT readme.md file for further information.
-
-  version: "1.0.0"
-  title: verein.cloud BB API
-  contact:
-    email: mheumann@comciencia.cl
-  license:
-    name: Apache 2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
-
-paths:
-
   /deliver-client-creds:
     post:
       summary: Receives client credentials for the specified club, so that communication with the BB API is possible.
@@ -57,21 +32,28 @@ paths:
           required: false
           schema:
             type: string
-            maxLength: 50            
+            maxLength: 50
         - in: query
           name: apiClient
           description: API Client for communication with BB API
           required: true
           schema:
             type: string
-            maxLength: 50
+            maxLength: 100
         - in: query
           name: apiSecret
           description: API Secret for communication with BB API
           required: true
           schema:
             type: string
-            maxLength: 50
+            maxLength: 255
+        - in: query
+          name: apiKey
+          description: API Key for communication with BB API
+          required: true
+          schema:
+            type: string
+            maxLength: 255
       responses:
         '200':
           description: Data stored successfully
@@ -85,19 +67,3 @@ paths:
           description: Invalid vid, db connection not possible
         '500':
           description: Database error when writing data
-
-components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-
-  responses:
-    UnauthorizedError:
-      description: Access token is missing or invalid
-    ForbiddenError:
-      description: Trying to access a resource that is not allowed for this user
-
-security:
-  - bearerAuth: []
