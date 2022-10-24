@@ -22,8 +22,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 
 paths:
-
-/deliver-client-creds:
+  /deliver-client-creds:
     post:
       summary: Receives client credentials for the specified club, so that communication with the BB API is possible.
       operationId: deliverClientCreds
