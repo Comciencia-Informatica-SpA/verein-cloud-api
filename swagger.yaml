@@ -45,6 +45,20 @@ paths:
             type: string
             maxLength: 50
         - in: query
+          name: bbUserId
+          description: User ID on BuchhaltungsButler side
+          required: false
+          schema:
+            type: string
+            maxLength: 50
+        - in: query
+          name: vvUsername
+          description: Username of this user on VV side for correct assignment of bbUserId. Required if bbUserId is set.
+          required: false
+          schema:
+            type: string
+            maxLength: 50            
+        - in: query
           name: apiClient
           description: API Client for communication with BB API
           required: true
