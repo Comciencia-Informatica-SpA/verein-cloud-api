@@ -193,7 +193,7 @@ Install the Authentication SPI "vvapi-username-password-form" in Keycloak.
 
 - In the "Authentication" menu of Keycloak, under "Flows", select "Browser" and click "Copy".
 - Name the copy "VV Browser" and remove the Auth types "Kerberos" and "Identity Provider Redirector".
-- Click "Actions > Edit flow" for "Forms" and change the name tp "VV Browser forms". Then set this type to "required".
+- Click "Actions > Edit flow" for "Forms" and change the name to "VV Browser forms". Then set this type to "required".
 - Click "Actions > Add execution" and select the Provider "VV API Username Password Form". Then set this execution to "required".
 - Remove all other executions under "VV Browser forms".
 - Go to "Authentication > Bindings" and change "Browser flow" to the newly created "VV Browser".
