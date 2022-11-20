@@ -172,13 +172,13 @@ To use this API, the following configurations are necessary in Keycloak.
   * Create new client bbutler-api-client
   * Set access type as “confidential”
   * Switch ON “Service Accounts Enabled”
-  * Switch OFF other modes (Standard Flow enabled ,Direct Access Grants Enabled etc)
+  * Switch OFF "Direct Access Grants Enabled"
+  * Enable "Standard Flow" and configure the "Valid Redirect URIs" (this should be given by the BB folks).
   * Create a role 'bbutler-access'
   * Add a mapper for this client: built-in "client roles"
   * Add a service account role by assigning the role 'bbutler-access' to the client 'bbutler-api-client'
   * Make sure the new client has the Client Scopes "email" and "profile" assigned.
   * Configure a base URL for this client, such as https://keycloak.staging.verein.cloud/auth/realms/demo/account/.
-- Also enable "Standard Flow" and configure the "Valid Redirect URIs" (this should be given by the BB folks).
 - Go to the "Mappers" tab and add the following mappers, so that the custom attributes will be added to the JWT (all with category "Token mapper" and type "User Attribute"):
   - users_id, claim JSON type = String
   - customers_id, claim JSON type = String
